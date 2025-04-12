@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DogusBlog.props" />
+</Project>
