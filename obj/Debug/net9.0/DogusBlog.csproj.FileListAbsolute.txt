@@ -151,3 +151,5 @@ C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\DogusBlo
 C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\DogusBlog.genruntimeconfig.cache
 C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\ref\DogusBlog.dll
 C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\DogusBlog.sourcelink.json
+C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\DogusBlog.RazorAssemblyInfo.cache
+C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\DogusBlog.RazorAssemblyInfo.cs

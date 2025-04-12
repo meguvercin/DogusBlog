@@ -10,6 +10,7 @@ namespace DogusBlog.Data.Concrete.EfCore
             var context = app.ApplicationServices.CreateScope().ServiceProvider.GetService<BlogContext>();
 
             if(context != null){
+                if(context.Database.GetPendingMigrations().Any()){
                 context.Database.Migrate();
             }
 
@@ -62,5 +63,6 @@ namespace DogusBlog.Data.Concrete.EfCore
                 context.SaveChanges();
             }                   
         }
+    }
     }
 }
