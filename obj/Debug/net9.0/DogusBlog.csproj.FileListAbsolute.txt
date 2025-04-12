@@ -150,3 +150,4 @@ C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\refint\D
 C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\DogusBlog.pdb
 C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\DogusBlog.genruntimeconfig.cache
 C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\ref\DogusBlog.dll
+C:\Users\meguv\OneDrive\Masaüstü\DogusBlog\DogusBlog\obj\Debug\net9.0\DogusBlog.sourcelink.json

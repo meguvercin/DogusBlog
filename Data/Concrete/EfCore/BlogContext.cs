@@ -1,7 +1,7 @@
 using DogusBlog.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace DogusBlog.Data.Concrete.Efcore{
+namespace DogusBlog.Data.Concrete.EfCore{
 
     public class BlogContext: DbContext
     {
