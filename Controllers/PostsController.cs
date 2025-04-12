@@ -1,3 +1,4 @@
+using DogusBlog.Data.Abstract;
 using DogusBlog.Data.Concrete.EfCore;
 using Microsoft.AspNetCore.Mvc;
 namespace DogusBlog.Controllers
@@ -6,14 +7,14 @@ namespace DogusBlog.Controllers
 
     public class PostsController : Controller
     {
-        private readonly BlogContext _context;
-        public PostsController(BlogContext context)
+        private IPostRepository _repository;
+        public PostsController(IPostRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
         public IActionResult Index()
         {
-            return View(_context.Posts.ToList());
+            return View(_repository.Posts.ToList());
         }
     }
 }
