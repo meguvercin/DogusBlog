@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootrsap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="/">
-            <i class="bi bi-code"></i>
+                <i class="bi bi-code"></i> DogusBlog
             </a>
         </div>
     </nav>
-    @RenderBody()
+    <div class="container mt-3">
+        @RenderBody()
+    </div>
+
 </body>
+
 </html>
