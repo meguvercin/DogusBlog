@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog\\wwwroot\\img\\img1.jpg",
+      "PackagePath": "staticwebassets\\img\\img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog\\wwwroot\\img\\img2.jpg",
+      "PackagePath": "staticwebassets\\img\\img2.jpg"
+    },
+    {
       "Id": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog\\wwwroot\\img\\yazılım.jpg",
       "PackagePath": "staticwebassets\\img\\yazılım.jpg"
     },

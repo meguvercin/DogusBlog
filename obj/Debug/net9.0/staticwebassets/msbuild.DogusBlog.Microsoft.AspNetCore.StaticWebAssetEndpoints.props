@@ -12,6 +12,30 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RHmaZKwZ8sszWEz\u002BjkfE5Z4CBAsbaOxEgiqwrVAoZyM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"136"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022RHmaZKwZ8sszWEz\u002BjkfE5Z4CBAsbaOxEgiqwrVAoZyM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 12 Apr 2025 23:11:43 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogusBlog/img/img1.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\img1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4dZynE6CKS\u002BnCBXrvQerRKA2kquTs\u002B9gTqCQY5r/xxc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"23567"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00224dZynE6CKS\u002BnCBXrvQerRKA2kquTs\u002B9gTqCQY5r/xxc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Apr 2025 20:26:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogusBlog/img/img1.zrvxaw4om6.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\img1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zrvxaw4om6"},{"Name":"integrity","Value":"sha256-4dZynE6CKS\u002BnCBXrvQerRKA2kquTs\u002B9gTqCQY5r/xxc="},{"Name":"label","Value":"_content/DogusBlog/img/img1.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"23567"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00224dZynE6CKS\u002BnCBXrvQerRKA2kquTs\u002B9gTqCQY5r/xxc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Apr 2025 20:26:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogusBlog/img/img2.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\img2.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-imdwCg0wKzXNQEZgnNIJN2ETGX4/gqijGi3OYujRd3s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"3848"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022imdwCg0wKzXNQEZgnNIJN2ETGX4/gqijGi3OYujRd3s=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Apr 2025 20:26:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogusBlog/img/img2.qnicvskcuz.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\img2.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnicvskcuz"},{"Name":"integrity","Value":"sha256-imdwCg0wKzXNQEZgnNIJN2ETGX4/gqijGi3OYujRd3s="},{"Name":"label","Value":"_content/DogusBlog/img/img2.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3848"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022imdwCg0wKzXNQEZgnNIJN2ETGX4/gqijGi3OYujRd3s=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Apr 2025 20:26:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DogusBlog/img/yazılım.1whm4l52a4.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\yazılım.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
