@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog\\DogusBlog.csproj": {}
+    "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog\\DogusBlog.csproj": {
+    "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog\\DogusBlog.csproj",
+        "projectUniqueName": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog.csproj",
         "projectName": "DogusBlog",
-        "projectPath": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog\\DogusBlog.csproj",
+        "projectPath": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog.csproj",
         "packagesPath": "C:\\Users\\meguv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog\\obj\\",
+        "outputPath": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

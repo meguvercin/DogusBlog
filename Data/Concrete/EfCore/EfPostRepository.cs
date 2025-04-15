@@ -34,5 +34,20 @@ namespace DogusBlog.Data.Concrete
                 _context.SaveChanges();
             }
         }
+        public void DeletePost(int id)
+        {
+            var post = _context.Posts.FirstOrDefault(p => p.PostId == id);
+            if (post != null)
+            {
+                _context.Posts.Remove(post);
+                _context.SaveChanges();
+            }
+        }
+        public List<Tag> GetAllTags()
+        {
+            return _context.Tags.ToList();
+        }
+
+
     }
 }

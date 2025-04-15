@@ -1,20 +1,48 @@
 @model User
 
-<div class="row">
-    <div class="col-md-2">
-        <div class="bg-white p-2">
-            <img src="~/img/@Model.Image" class="img-fluid" alt="">
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow-sm text-center p-3">
+                <img src="~/img/@Model.Image" class="img-fluid rounded-circle mb-3"
+                    style="max-width: 300px; margin: auto;" alt="Profil Fotoğrafı">
+                <h5 class="fw-bold">@Model.Name</h5>
+                <p class="text-muted">@Model.Email</p>
+            </div>
         </div>
-    </div>
-    <div class="col-md-10">
-        <div class="bg-white p-4">
-            <h5>@Model.Name</h5>
-            <hr>
-            <div id="posts">
-                <h5 class="my-4">Yayınlanan Gönderiler</h5>
-                <ul class="list-group">
-                    @foreach(var post in @Model.Posts){
-                        <li class="list-group-item"><i class="bi bi-caret-right-fill"></i><a href="/posts/details/@post.Url"></a>@post.Title</li>
+        <div class="col-lg-8">
+            <div class="card shadow-sm p-4 mb-4">
+                <h5 class="mb-3">Profil Bilgilerini Güncelle</h5>
+                <form asp-action="Profile" asp-controller="Users" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label">Adınız</label>
+                        <input type="text" class="form-control" name="Name" value="@Model.Name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">E-posta</label>
+                        <input type="email" class="form-control" name="Email" value="@Model.Email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Şifre</label>
+                        <input type="password" class="form-control" name="Password" value="@Model.Password">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Profil Fotoğrafı</label>
+                        <input type="file" class="form-control" name="ImageFile">
+                    </div>
+                    <button type="submit" class="btn btn-success">Kaydet</button>
+                </form>
+            </div>
+
+            <div class="card shadow-sm p-4">
+                <h5 class="mb-3">Yayınladığınız Gönderiler</h5>
+                <ul class="list-group list-group-flush">
+                    @foreach (var post in @Model.Posts)
+                    {
+                        <li class="list-group-item">
+                            <i class="bi bi-caret-right-fill text-primary"></i>
+                            <a href="/blogs/@post.Url" class="text-decoration-none">@post.Title</a>
+                        </li>
                     }
                 </ul>
             </div>

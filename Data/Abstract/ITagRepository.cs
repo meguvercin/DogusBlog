@@ -6,5 +6,6 @@ namespace DogusBlog.Data.Abstract
     {
         IQueryable<Tag> Tags { get; }
         void CreateTag(Tag Tag);
+        
     }
 }

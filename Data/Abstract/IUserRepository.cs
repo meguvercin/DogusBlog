@@ -7,5 +7,7 @@ namespace DogusBlog.Data.Abstract
     {
         IQueryable<User> Users { get; }
         void CreateUser(User User);
+        Task UpdateUser(User user);
+
     }
 }

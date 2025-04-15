@@ -15,5 +15,6 @@ namespace DogusBlog.ViewComponents{
         public async Task<IViewComponentResult> InvokeAsync(){
             return View(await _tagRepository.Tags.ToListAsync());
         }
+        
     }
 }

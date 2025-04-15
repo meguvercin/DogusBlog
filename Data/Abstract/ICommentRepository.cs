@@ -7,5 +7,7 @@ namespace DogusBlog.Data.Abstract
     {
         IQueryable<Comment> Comments { get; }
         void CreateComment(Comment Comment);
+        void DeleteComment(Comment comment);
     }
+
 }

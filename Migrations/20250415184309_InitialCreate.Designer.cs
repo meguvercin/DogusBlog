@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogusBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20250414154939_InitialCreate")]
+    [Migration("20250415184309_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

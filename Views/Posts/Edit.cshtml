@@ -1,40 +1,89 @@
 @model PostCreateViewModel
+@using System.Security.Claims
 
 <div class="row">
     <div class="col-12">
         <div class="bg-white p-4">
-            <h1>Post Edit</h1>
-            <form action="Create" method="post">
+            <h1>Post Düzenle</h1>
+
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="PostId" />
+                <input type="hidden" asp-for="Image" />
+
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="PostId">
+
                 <div class="mb-3">
                     <label asp-for="Title" class="form-label"></label>
-                    <input asp-for="Title" class="form-control">
+                    <input asp-for="Title" class="form-control" />
                     <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label asp-for="Description" class="form-label"></label>
-                    <input asp-for="Description" class="form-control">
+                    <input asp-for="Description" class="form-control" />
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label asp-for="Url" class="form-label"></label>
-                        <input asp-for="Url" class="form-control">
+                    <input asp-for="Url" class="form-control" />
                     <span asp-validation-for="Url" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label asp-for="Content" class="form-label"></label>
-                    <input asp-for="Content" class="form-control">
+                    <textarea asp-for="Content" class="form-control" id="Content"></textarea>
                     <span asp-validation-for="Content" class="text-danger"></span>
                 </div>
-                @if(User.FindFirstValue(ClaimTypes.Role) == "admin"){
-                    <div class="form-check mb-3">
-                        <input asp-for="IsActive" class="form-check-input">
-                        <label asp-for="IsActive" class="form-check-label"></label>
-                    </div>
-                }
-                <button type="submit" class="btn btn-primary">Create</button>
+
+                <div class="mb-3">
+                    <label asp-for="ImageFile" class="form-label">Kapak Görseli</label><br />
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img src="~/img/@Model.Image" class="img-thumbnail mb-2" style="max-height: 200px;" />
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="removeImage" name="removeImage"
+                                value="true">
+                            <label class="form-check-label" for="removeImage">Görseli Kaldır</label>
+                        </div>
+                    }
+                    <input asp-for="ImageFile" type="file" class="form-control" accept="image/*" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IsActive" class="form-label"></label>
+                    <select asp-for="IsActive" class="form-select">
+                        <option value="true">Aktif</option>
+                        <option value="false">Pasif</option>
+                    </select>
+                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
             </form>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script src="https://cdn.tiny.cloud/1/zhch4sw528a3o16945053jnwef54p8vha91ojxrhylzeviwj/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#Content',
+            height: 300,
+            menubar: false,
+            plugins: 'link image code lists table',
+            toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist | link image | code',
+            language: 'tr'
+        });
+
+        // Handle image removal checkbox
+        document.getElementById('removeImage')?.addEventListener('change', function () {
+            if (this.checked) {
+                document.querySelector('input[name="Image"]').value = '';
+            }
+        });
+    </script>
+}

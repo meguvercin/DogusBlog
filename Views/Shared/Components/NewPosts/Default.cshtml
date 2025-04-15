@@ -1,18 +1,21 @@
 @model List<Post>
-<div class="card mt-3">
-    <div class="card-header">
-        <h5 class="card-title">New Posts</h5>
-    </div>
-    <div class="card-body">
-        @foreach(var post in Model){
 
-        <div class="mb-3">
-            <h6 class="mb-0">
-                <a href="/blogs/@post.Url">
-                @post.Title
-                </a>
-            </h6>
-        </div>
-        }
+<div class="card shadow-sm mt-4 border-0">
+    <div class="card-header bg-white border-bottom-0">
+        <h5 class="fw-semibold mb-0 text-dark">Yeni Yazılar</h5>
+    </div>
+    <div class="card-body pt-3">
+        <ul class="list-unstyled">
+            @foreach (var post in Model.Where(p => p.IsActive).OrderByDescending(p => p.PublishedOn).Take(5))
+            {
+                <li class="mb-3">
+                    <div class="d-flex flex-column">
+                        <a href="/blogs/@post.Url" class="fw-medium text-decoration-none text-dark hover-effect"
+                            style="font-size: 1rem;">@post.Title</a>
+                        <small class="text-muted">@post.PublishedOn.ToString("dd MMMM yyyy")</small>
+                    </div>
+                </li>
+            }
+        </ul>
     </div>
 </div>

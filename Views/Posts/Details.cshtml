@@ -1,102 +1,140 @@
 @model Post
-<div class="row">
-    <div class="col-lg-8">
-        <div class="bg-white p-4">
-            <h1 class="h4 mn-4">@Model.Title</h1>
-            <div class="tags">
-                @foreach (var tag in Model.Tags)
-                {
-                    <a href="/blogs/tag/@tag.Url"
-                        class="badge bg-@tag.Color bg-opacity-10 text-@tag.Color mb-2 fw-bold">@tag.Text</a>
-                }
-            </div>
-            <img src="~/img/@Model.Image" class="img-fluid rounded" alt="">
-            <div>@Model.Content</div>
-        </div>
-        <div class="bg-white mt-3">
-            <div class="card border-0">
-                <div class="card-header pb-0">
-                    <h4><span id="commentCount">@Model.Comments.Count() adet yorum var.</span></h4>
-                </div>
-                <div class="card-body">
-                    <div id="comments">
-                        @foreach (var comment in Model.Comments)
-                        {
-                            <div class="my-4 d-flex">
-                                <img src="~/img/@comment.User.Image" class="avatar rounded-circle float-start me-3" alt="">
-                                <div class="mb-2">
-                                    <h6>@comment.User.UserName</h6>
-                                    <span>@comment.PublishedOn</span>
-                                    <p>@comment.Text</p>
-                                </div>
-                            </div>
-                        }
-                    </div>
-                    @if(User.Identity!.IsAuthenticated){
+@using System.Security.Claims
 
-                    <hr class="my-4">
-                    <div>
-                        <h4 class="mb-3">Yorum Ekle</h4>
-                        <form action="/posts/AddComment" method="post">
-                            <input type="hidden" id="PostId" name="PostId" value="@Model.PostId">
-                            <div class="mb-3">
-                                <label for="Text" class="form-label">Yorum</label>
-                                <textarea type="text" name="Text" id="Text" class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" id="btnYorumKayit" class="btn btn-primary">Kaydet</button>
-                            </div>
-                        </form>
+<div class="container my-5" style="max-width: 768px; font-family: 'Georgia', serif;">
+
+    <!-- Başlık -->
+    <h1 class="fw-bold mb-3" style="font-size: 2.5rem; line-height: 1.4;">@Model.Title</h1>
+
+    <!-- Etiketler (Başlığın hemen altında) -->
+    <div class="mb-4">
+        @foreach (var tag in Model.Tags)
+        {
+            <span class="badge bg-@((tag.Color?.ToString().ToLower()) ?? "secondary") text-white me-2">#@tag.Text</span>
+
+        }
+    </div>
+
+    <!-- Yazar bilgisi -->
+    <div class="d-flex align-items-center mb-5">
+        <img src="~/img/@(Model.User?.Image ?? "default-user.png")" class="rounded-circle me-3 border" width="52"
+            height="52" />
+        <div class="mt-1">
+            <div class="fw-semibold" style="font-size: 1rem;">@Model.User?.Name</div>
+            <div class="text-muted small">
+                Yayın Tarihi: @Model.PublishedOn.ToString("dd MMMM yyyy")
+            </div>
+        </div>
+    </div>
+
+    <!-- Görsel -->
+    @if (!string.IsNullOrEmpty(Model.Image))
+    {
+        <img src="~/img/@Model.Image" class="img-fluid rounded mb-4 shadow-sm" alt="@Model.Title" />
+    }
+
+    <!-- İçerik -->
+    <div class="fs-5 lh-lg" style="font-family: 'Merriweather', serif; color: #333;">
+        @Html.Raw(Model.Content)
+    </div>
+
+    <!-- Yorumlar -->
+    <div class="mt-5">
+        <h5 class="mb-4 fw-bold">@Model.Comments.Count() Yorum</h5>
+
+        @foreach (var comment in Model.Comments)
+        {
+            <div class="border-start ps-3 mb-4">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                    <div class="d-flex">
+                        <img src="~/img/@(comment.User?.Image ?? "default-user.png")" class="rounded-circle me-2" width="32"
+                            height="32" />
+                        <div>
+                            <strong>@comment.User?.UserName</strong>
+                            <small class="text-muted d-block">
+                                @(comment.PublishedOn.Year > 2000 ? comment.PublishedOn.ToString("dd.MM.yyyy HH:mm") : "")
+                            </small>
+                        </div>
                     </div>
-                    }else{
-                        <p>Yorum için uygulamaya giriş yapmalısız <a href="/users/login">Login</a></p>
+                    @if (comment.UserId == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0"))
+                    {
+                        <form asp-action="DeleteComment" asp-controller="Posts" method="post" asp-route-id="@comment.CommentId"
+                            class="comment-delete-form d-inline">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Sil</button>
+                        </form>
+
                     }
                 </div>
+                <p class="ms-5">@comment.Text</p>
             </div>
-        </div>
+        }
     </div>
-    <div class="col-lg-4">
-        <vc:tags-menu></vc:tags-menu>
-        <vc:new-posts></vc:new-posts>
-    </div>
+
+    <!-- Yorum Ekle -->
+    @if (User.Identity!.IsAuthenticated)
+    {
+        <form asp-action="AddComment" asp-controller="Posts" method="post" class="mt-4">
+            <input type="hidden" name="PostId" value="@Model.PostId" />
+            <div class="mb-3">
+                <label for="Text" class="form-label fw-semibold">Yorumunuz</label>
+                <textarea name="Text" class="form-control" id="Text" rows="4" required
+                    placeholder="Fikrini belirt..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark px-4" id="btnYorumKayit">Yorum Yap</button>
+        </form>
+    }
+    else
+    {
+        <div class="alert alert-warning mt-4">Yorum yapabilmek için giriş yapmalısınız.</div>
+    }
 </div>
+
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#btnYorumKayit").click(function () {
+
+            // Yorum ekleme işlemi
+            $("#btnYorumKayit").click(function (e) {
+                e.preventDefault();
+
                 $.ajax({
                     type: 'POST',
-                    url: '@Url.Action("AddComment")',
+                    url: '@Url.Action("AddComment", "Posts")',
                     dataType: 'json',
                     data: {
-                        PostId: $('#PostId').val(),
-                        UserName: $('#UserName').val(),
-                        Text: $('#Text').val(),
+                        PostId: $('input[name="PostId"]').val(),
+                        Text: $('#Text').val()
                     },
                     success: function (yorum) {
                         var date = new Date(yorum.publishedOn);
-
-                        $("#comments").append(`
-                            <div class="my-4 d-flex">
-                                <img src="~/img/${yorum.avatar}" class="avatar rounded-circle float-start me-3" alt="">
-                            <div class="mb-2">
-                            <h6>${yorum.username}</h6>
-                            <span>${date.toLocaleDateString()}</span>
-                            <p>${yorum.Text}</p>
-                            </div>
-                            </div>
-                            `);
-                            
-                            $("#UserName").val('');
-                            $("#Text").val('');
-
-                            var adet = parseInt($("#commentCount").text());
-                            $("#commentCount").text(adet + 1);
+                        $("#commentCount").text(parseInt($("#commentCount").text()) + 1);
+                        $("#Text").val('');
+                        location.reload();
+                    },
+                    error: function () {
+                        alert("Yorum gönderilirken bir hata oluştu.");
                     }
                 });
-                return false;
-            })
+            });
+
+            // Yorum silme işlemi
+            $(document).on('submit', '.comment-delete-form', function (e) {
+                e.preventDefault();
+                const form = $(this);
+
+                $.ajax({
+                    type: 'POST',
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    success: function () {
+                        location.reload();
+                    },
+                    error: function () {
+                        alert("Yorum silinirken bir hata oluştu.");
+                    }
+                });
+            });
         });
     </script>
 }

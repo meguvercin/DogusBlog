@@ -1,31 +1,38 @@
 @model List<Post>
 
-    <div class="row">
-        <div class="col-12">
-            <h2>Post List</h2>
-            <a href="/posts/create" class="btn btn-primary">New Post</a>
-            <table class="table table-bordered mt-3">
-                <thead>
+<div class="row">
+    <div class="col-12">
+        <h2>Post List</h2>
+        <a href="/posts/create" class="btn btn-primary">New Post</a>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th style="width: 200px;">Image</th>
+                    <th>Title</th>
+                    <th>Aktiflik Durumu></th>
+                    <th style="width: 125px;"></th>
+                </tr>
+            <tbody>
+                @foreach (var item in Model)
+                {
                     <tr>
-                        <th style="width: 200px;">Image</th>
-                        <th>Title</th>
-                        <th>Is Active></th>
-                        <th style="width: 125px;"></th>
+                        <td><img src="~/img/@item.Image" class="img-fluid" alt=""></td>
+                        <td>@item.Title</td>
+                        <td>@item.IsActive</td>
+                        <td>
+                            <a asp-controller="Posts" asp-action="Edit" asp-route-id="@item.PostId"
+                                class="btn btn-sm btn-primary">Edit</a>
+
+                            <form asp-action="Delete" asp-controller="Posts" method="post" asp-route-id="@item.PostId"
+                                style="display:inline;" onsubmit="return confirm('Silmek istediğine emin misin?');">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
-                    <tbody>
-                        @foreach(var item in Model){
-                            <tr>
-                                <td><img src="~/img/@item.Image" class="img-fluid" alt=""></td>
-                                <td>@item.Title</td>
-                                <td>@item.IsActive</td>
-                                <td>
-                                    <a asp-controller="Posts" asp-action="Edit" asp-route-id="@item.PostId" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="" class="btn btn-sm btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </thead>
-            </table>
-        </div>
+                }
+            </tbody>
+            </thead>
+        </table>
     </div>
+</div>

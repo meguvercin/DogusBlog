@@ -19,5 +19,11 @@ namespace DogusBlog.Data.Concrete
             _context.Comments.Add(Comment);
             _context.SaveChanges();
         }
+        public void DeleteComment(Comment comment)
+        {
+            _context.Comments.Remove(comment);
+            _context.SaveChanges();
+        }
+
     }
 }

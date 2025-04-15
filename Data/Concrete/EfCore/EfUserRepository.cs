@@ -19,5 +19,11 @@ namespace DogusBlog.Data.Concrete
             _context.Users.Add(User);
             _context.SaveChanges();
         }
+        public async Task UpdateUser(User user)
+        {
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }
