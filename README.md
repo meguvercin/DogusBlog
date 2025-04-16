@@ -1,7 +1,7 @@
 
-# Dogus Blog - Mezuniyet Projesi
+# Dogus Blog
 
-Bu proje, Doğuş Üniversitesi Bilgisayar Mühendisliği bitirme projesi kapsamında Mehmet Emin Güvercin tarafından geliştirilmiştir.
+**Dogus Blog**, Mehmet Emin Güvercin tarafından geliştirilen, modern web teknolojileriyle hazırlanmış bir blog platformudur. Kullanıcılar blog yazıları oluşturabilir, görsel destekli içerikler paylaşabilir ve yorumlaşabilir.
 
 ## 🚀 Proje Özellikleri
 
@@ -35,5 +35,4 @@ Bu proje, Doğuş Üniversitesi Bilgisayar Mühendisliği bitirme projesi kapsam
 ## 👤 Geliştirici
 
 Mehmet Emin Güvercin  
-Doğuş Üniversitesi, Bilgisayar Mühendisliği  
-📧 meguvercin@gmail.com
+Doğuş Üniversitesi, Bilgisayar Mühendisliği
