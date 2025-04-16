@@ -92,8 +92,8 @@ DogusBlog/
 ├── wwwroot/
 │   └── img/
 │       ├── profile-picture.png
-│       ├── yazı1.jpg
-│       └── yazı2.jpg
+│       ├── img1.jpg
+│       └── img2.jpg
 ```
 ## 🛠️ Kurulum Talimatları
 
