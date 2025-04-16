@@ -3,7 +3,9 @@
 **Dogus Blog**, ASP.NET Core MVC ile geliştirilmiş, kullanıcıların blog yazıları paylaşabildiği, yorum yapabildiği, etiketleme ve görsel yükleme özellikleri bulunan modern bir blog platformudur. Bu proje, yazılım geliştirici olarak bir bootcamp işe alım süreci kapsamında teknik becerileri göstermek amacıyla geliştirilmiştir.
 
 ---
+![Dogus Blog Homepage]![home_page](https://github.com/user-attachments/assets/b86e92bf-0699-455a-aebb-7fc139d30763)
 
+---
 ## 🚀 Özellikler
 
 - ✅ **Kullanıcı yönetimi:** Kayıt olma, giriş yapma, çıkış yapma, profil düzenleme
