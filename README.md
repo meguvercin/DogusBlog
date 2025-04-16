@@ -118,8 +118,8 @@ DogusBlog/
     - **Email:** info@meguvercin.com
     - **Şifre:** 123456
   - Kullanıcı:
-    - **Kullanıcı Adı:** ahmetkaya
-    - **Email:** info@ahmetkaya.com
+    - **Kullanıcı Adı:** emin
+    - **Email:** info@emin.com
     - **Şifre:** 123456
 
 - 5 etiket:
