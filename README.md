@@ -94,6 +94,38 @@ DogusBlog/
 │       ├── yazı1.jpg
 │       └── yazı2.jpg
 ```
+## 🛠️ Kurulum Talimatları
+
+1. Projeyi Visual Studio 2022 veya üzeri ile açın.
+2. Paketleri yükleyin:
+   ```
+   dotnet restore
+   ```
+3. Veritabanını oluşturmak için:
+   ```
+   dotnet ef database update
+   ```
+4. Uygulamayı başlatın:
+   ```
+   dotnet run
+   ```
+
+## 🌱 Seed Data
+
+- 2 kullanıcı otomatik olarak eklenir:
+  - Admin:
+    - **Kullanıcı Adı:** meguvercin
+    - **Email:** info@meguvercin.com
+    - **Şifre:** 123456
+  - Kullanıcı:
+    - **Kullanıcı Adı:** ahmetkaya
+    - **Email:** info@ahmetkaya.com
+    - **Şifre:** 123456
+
+- 5 etiket:
+  - web programlama, backend, frontend, game, fullstack
+
+- 3 örnek post (başlangıç için otomatik olarak eklenir)
 
 
 ## 👤 Geliştirici
