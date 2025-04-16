@@ -35,6 +35,24 @@
                     <textarea asp-for="Content" class="form-control" id="Content"></textarea>
                     <span asp-validation-for="Content" class="text-danger"></span>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label">Etiketler</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        @foreach (var tag in Model.AvailableTags ?? new List<Tag>())
+                        {
+                            var isSelected = Model.SelectedTagIds.Contains(tag.TagId);
+                            <button type="button" class="tag-toggle custom-tag-btn @(isSelected ? "selected" : "")"
+                                data-tag-id="@tag.TagId">
+                                @tag.Text
+                            </button>
+
+                            @if (isSelected)
+                            {
+                                <input type="hidden" name="SelectedTagIds" value="@tag.TagId" />
+                            }
+                        }
+                    </div>
+                </div>
 
                 <div class="mb-3">
                     <label asp-for="ImageFile" class="form-label">Kapak Görseli</label><br />
@@ -87,3 +105,25 @@
         });
     </script>
 }
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".tag-toggle").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const tagId = btn.getAttribute("data-tag-id");
+                const existingInput = document.querySelector(`input[name="SelectedTagIds"][value="${tagId}"]`);
+
+                if (existingInput) {
+                    existingInput.remove();
+                    btn.classList.remove("selected");
+                } else {
+                    const hidden = document.createElement("input");
+                    hidden.type = "hidden";
+                    hidden.name = "SelectedTagIds";
+                    hidden.value = tagId;
+                    btn.closest("form").appendChild(hidden);
+                    btn.classList.add("selected");
+                }
+            });
+        });
+    });
+</script>

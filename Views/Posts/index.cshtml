@@ -8,6 +8,10 @@
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 @foreach (var post in Model.Posts.Where(p => p.IsActive))
                 {
+                    var firstTag = post.Tags.FirstOrDefault();
+                    var tagText = firstTag?.Text ?? "Etiket Yok";
+                    var tagColor = firstTag?.Color?.ToString().ToLower() ?? "secondary";
+
                     <div class="col">
                         <div class="card h-100 shadow-sm border-0">
                             <img src="~/img/@post.Image" class="card-img-top" alt="@post.Title"
@@ -20,8 +24,7 @@
                             </div>
                             <div
                                 class="card-footer bg-white border-0 d-flex justify-content-between align-items-center px-3 pb-3">
-                                <span class="badge bg-danger bg-opacity-10 text-danger border border-danger fw-bold">Web
-                                    programlama</span>
+                                <span class="badge bg-@tagColor text-white fw-semibold">#@tagText</span>
                                 <a href="/blogs/@post.Url" class="btn btn-sm btn-outline-primary">Detay</a>
                             </div>
                         </div>

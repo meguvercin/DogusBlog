@@ -46,19 +46,22 @@ namespace DogusBlog.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userRepository.Users
+                // Aynı kullanıcı adı veya e-posta var mı kontrol et
+                var existingUser = await _userRepository.Users
                     .FirstOrDefaultAsync(x => x.UserName == model.Username || x.Email == model.Email);
 
-                if (user == null)
+                if (existingUser == null)
                 {
-                    _userRepository.CreateUser(new User
+                    var newUser = new User
                     {
                         UserName = model.Username,
                         Name = model.Name,
                         Email = model.Email,
                         Password = model.Password,
-                        Image = "default-user.png"
-                    });
+                        Image = "default-picture.png" // default profil resmi
+                    };
+
+                    _userRepository.CreateUser(newUser);
 
                     TempData["Message"] = "Kayıt başarılı! Giriş yapabilirsiniz.";
                     return RedirectToAction("Login");
@@ -69,6 +72,7 @@ namespace DogusBlog.Controllers
 
             return View(model);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)

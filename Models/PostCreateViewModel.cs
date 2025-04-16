@@ -30,5 +30,7 @@ namespace DogusBlog.Models
         public IFormFile? ImageFile { get; set; }
 
         public bool IsActive { get; set; }
+        public List<int> SelectedTagIds { get; set; } = new List<int>();
+        public List<Tag>? AvailableTags { get; set; }
     }
 }

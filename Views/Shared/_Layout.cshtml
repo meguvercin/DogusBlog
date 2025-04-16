@@ -16,30 +16,32 @@
     <nav class="navbar navbar-expand-lg" style="background-color: #ffffff;">
 
         <div class="container">
-            <a href="/" class="navbar-brand">
-                <i class="bi bi-code"></i class=>DogusBlog
+            <a href="/" class="navbar-brand" style="font-size: 1.5rem; text-italic">
+            <img src="~/img/dogus_teknoloji_logo.jpeg" alt="DogusBlog Logo" height="30"
+                class="d-inline-block align-text-top">
+            DogusBlog
             </a>
 
             <ul class="navbar-nav ms-auto">
                 @if (User.Identity!.IsAuthenticated)
                 {
                     <li class="nav-item">
-                        <a href="/posts/list" class="nav-link">Posts</a>
+                        <a href="/posts/list" class="nav-link hover-effect">Gönderiler</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/profile/@User.Identity.Name" class="nav-link">@User.Identity.Name</a>
+                        <a href="/profile/@User.Identity.Name" class="nav-link hover-effect">@User.Identity.Name</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/users/logout" class="nav-link">Logout</a>
+                        <a href="/users/logout" class="nav-link hover-red">Çıkış Yap</a>
                     </li>
                 }
                 else
                 {
                     <li class="nav-item">
-                        <a href="/users/login" class="nav-link">Login</a>
+                        <a href="/users/login" class="nav-link">Giriş</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/users/register" class="nav-link">Register</a>
+                        <a href="/users/register" class="nav-link">Kayıt ol</a>
                     </li>
                 }
             </ul>
