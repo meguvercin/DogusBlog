@@ -199,12 +199,10 @@ namespace DogusBlog.Controllers
             post.Url = model.Url;
             post.IsActive = model.IsActive;
 
-            // Tag güncellemesi
             post.Tags = _postRrepository.GetAllTags()
                 .Where(t => model.SelectedTagIds.Contains(t.TagId))
                 .ToList();
 
-            // Görsel işlemleri
             if (ImageFile != null && ImageFile.Length > 0)
             {
                 var fileName = Guid.NewGuid().ToString() + Path.GetExtension(ImageFile.FileName);
@@ -230,10 +228,11 @@ namespace DogusBlog.Controllers
                 .FirstOrDefaultAsync(c => c.CommentId == id);
 
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var role = User.FindFirstValue(ClaimTypes.Role);
             if (string.IsNullOrEmpty(userIdStr)) return RedirectToAction("Login");
             int userId = int.Parse(userIdStr);
 
-            if (comment != null && comment.UserId == userId)
+            if (comment != null && (comment.UserId == userId || role == "admin"))
             {
                 _commentRepository.DeleteComment(comment);
                 TempData["Message"] = "Yorum başarıyla silindi.";
@@ -263,14 +262,13 @@ namespace DogusBlog.Controllers
         {
             var content = (post.Title + " " + post.Description + " " + post.Content).ToLower();
 
-            // Eşleşmesini istediğimiz anahtar kelimeler
             var keywords = new List<string> {
         "web programlama", "backend", "frontend", "game", "fullstack"
     };
 
             var tags = new List<Tag>();
 
-            var allTags = _postRrepository.GetAllTags(); // Aşağıda adım 2'de tanımlayacağız
+            var allTags = _postRrepository.GetAllTags();
 
             foreach (var keyword in keywords)
             {

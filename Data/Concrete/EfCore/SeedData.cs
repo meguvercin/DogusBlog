@@ -22,14 +22,17 @@ namespace DogusBlog.Data.Concrete.EfCore
                         new Tag { Text = "backend", Url = "backend", Color = TagColors.danger },
                         new Tag { Text = "frontend", Url = "frontend", Color = TagColors.secondary },
                         new Tag { Text = "game", Url = "game", Color = TagColors.success },
-                        new Tag { Text = "fullstack", Url = "full-stack", Color = TagColors.warning }
+                        new Tag { Text = "fullstack", Url = "full-stack", Color = TagColors.warning },
+                        new Tag { Text = "yapayzeka", Url = "yapay-zeka", Color = TagColors.primary },
+                        new Tag { Text = "turizm", Url = "turizm", Color = TagColors.danger },
+                        new Tag { Text = "ekonomi", Url = "ekonomi", Color = TagColors.success }
                     );
                     context.SaveChanges();
                 }
                 if (!context.Users.Any())
                 {
                     context.Users.AddRange(
-                        new User { UserName = "ahmetkaya", Image = "img1.jpg", Name = "Ahmet Kaya", Email = "info@ahmetkaya.com", Password = "123456" },
+                        new User { UserName = "mehmetemin", Image = "img1.jpg", Name = "Emin", Email = "info@emin.com", Password = "123456" },
                         new User { UserName = "meguvercin", Image = "img2.jpg", Name = "Mehmet Emin Güvercin", Email = "info@meguvercin.com", Password = "123456" }
                     );
                     context.SaveChanges();

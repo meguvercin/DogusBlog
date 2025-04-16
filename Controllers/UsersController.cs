@@ -46,7 +46,6 @@ namespace DogusBlog.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Aynı kullanıcı adı veya e-posta var mı kontrol et
                 var existingUser = await _userRepository.Users
                     .FirstOrDefaultAsync(x => x.UserName == model.Username || x.Email == model.Email);
 
@@ -58,7 +57,7 @@ namespace DogusBlog.Controllers
                         Name = model.Name,
                         Email = model.Email,
                         Password = model.Password,
-                        Image = "default-picture.png" // default profil resmi
+                        Image = "default-picture.png" 
                     };
 
                     _userRepository.CreateUser(newUser);
@@ -92,7 +91,7 @@ namespace DogusBlog.Controllers
                         new Claim(ClaimTypes.UserData, isUser.Image ?? "")
                     };
 
-                    if (isUser.Email == "info@ahmetkaya.com")
+                    if (isUser.Email == "info@meguvercin.com")
                     {
                         userClaims.Add(new Claim(ClaimTypes.Role, "admin"));
                     }

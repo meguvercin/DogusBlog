@@ -3,10 +3,9 @@
 
 <div class="container my-5" style="max-width: 768px; font-family: 'Georgia', serif;">
 
-    <!-- Başlık -->
     <h1 class="fw-bold mb-3" style="font-size: 2.5rem; line-height: 1.4;">@Model.Title</h1>
 
-    <!-- Etiketler (Başlığın hemen altında) -->
+
     <div class="mb-4">
         @foreach (var tag in Model.Tags)
         {
@@ -15,7 +14,7 @@
         }
     </div>
 
-    <!-- Yazar bilgisi -->
+
     <div class="d-flex align-items-center mb-5">
         <img src="~/img/@(Model.User?.Image ?? "default-picture.png")" class="rounded-circle me-3 border" width="52"
             height="52" />
@@ -27,18 +26,18 @@
         </div>
     </div>
 
-    <!-- Görsel -->
+
     @if (!string.IsNullOrEmpty(Model.Image))
     {
         <img src="~/img/@Model.Image" class="img-fluid rounded mb-4 shadow-sm" alt="@Model.Title" />
     }
 
-    <!-- İçerik -->
+
     <div class="fs-5 lh-lg" style="font-family: 'Merriweather', serif; color: #333;">
         @Html.Raw(Model.Content)
     </div>
 
-    <!-- Yorumlar -->
+
     <div class="mt-5">
         <h5 class="mb-4 fw-bold">@Model.Comments.Count() Yorum</h5>
 
@@ -70,7 +69,7 @@
         }
     </div>
 
-    <!-- Yorum Ekle -->
+
     @if (User.Identity!.IsAuthenticated)
     {
         <form asp-action="AddComment" asp-controller="Posts" method="post" class="mt-4">
@@ -78,7 +77,7 @@
             <div class="mb-3">
                 <label for="Text" class="form-label fw-semibold">Yorumunuz</label>
                 <textarea name="Text" class="form-control" id="Text" rows="4" required
-                    placeholder="Fikrini belirt..."></textarea>
+                placeholder="Fikrini belirt..."></textarea>
             </div>
             <button type="submit" class="btn btn-dark px-4" id="btnYorumKayit">Yorum Yap</button>
         </form>
@@ -94,7 +93,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            // Yorum ekleme işlemi
+
             $("#btnYorumKayit").click(function (e) {
                 e.preventDefault();
 
@@ -118,7 +117,7 @@
                 });
             });
 
-            // Yorum silme işlemi
+
             $(document).on('submit', '.comment-delete-form', function (e) {
                 e.preventDefault();
                 const form = $(this);

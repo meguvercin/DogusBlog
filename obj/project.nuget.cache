@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OY96EONV3JY=",
+  "dgSpecHash": "AFxMyq8OStg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\DogusBlog\\DogusBlog.csproj",
+  "projectFilePath": "C:\\Users\\meguv\\OneDrive\\Masaüstü\\Yeni\\DogusBlog\\DogusBlog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\meguv\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\meguv\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
