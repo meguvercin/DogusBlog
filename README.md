@@ -31,15 +31,6 @@
 | Tüm kullanıcıları görme    | ❌    | ❌        |
 | Profilini güncelleme       | ✅    | ✅        |
 =======
-| Özellik | Admin | Kullanıcı |
-|--------|--------|-----------|
-| Tüm postları görme | ✅ | ✅ |
-| Tüm postları düzenleme | ✅ | ❌ |
-| Kendi postlarını düzenleme | ✅ | ✅ |
-| Kendi yorumunu silme | ✅ | ✅ |
-| Tüm kullanıcıları görme | ❌ | ❌ |
-| Profilini güncelleme | ✅ | ✅ |
->>>>>>> 6b3b96e7bb4748fb96450de3f8f8509b9de5cae5
 
 ---
 
@@ -55,93 +46,6 @@
 - Repository Pattern
 
 ---
-<<<<<<< HEAD
-
-## 📁 Proje Klasör Yapısı
-
-```
-DogusBlog/
-├── Controllers/
-│   ├── PostsController.cs
-│   └── UsersController.cs
-│
-├── Data/
-│   ├── Abstract/
-│   │   ├── ICommentRepository.cs
-│   │   ├── IPostRepository.cs
-│   │   ├── ITagRepository.cs
-│   │   └── IUserRepository.cs
-│   └── Concrete/
-│       └── EfCore/
-│           ├── BlogContext.cs
-│           ├── EfCommentRepository.cs
-│           ├── EfPostRepository.cs
-│           ├── EfTagRepository.cs
-│           ├── EfUserRepository.cs
-│           └── SeedData.cs
-│
-├── Entity/
-│   ├── Comment.cs
-│   ├── Post.cs
-│   ├── Tag.cs
-│   └── User.cs
-│
-├── Models/
-│   ├── LoginViewModel.cs
-│   ├── RegisterViewModel.cs
-│   ├── PostCreateViewModel.cs
-│   └── PostViewModel.cs
-│
-├── ViewComponents/
-│   ├── TagsMenuViewComponent.cs
-│   └── NewPostsViewComponent.cs
-│
-├── Views/
-│   ├── Posts/
-│   ├── Shared/
-│   └── Users/
-│
-├── wwwroot/
-│   └── img/
-│       ├── profile-picture.png
-│       ├── yazı1.jpg
-│       └── yazı2.jpg
-```
-
-## 🛠️ Kurulum Talimatları
-
-1. Projeyi Visual Studio 2022 veya üzeri ile açın.
-2. Paketleri yükleyin:
-   ```
-   dotnet restore
-   ```
-3. Veritabanını oluşturmak için:
-   ```
-   dotnet ef database update
-   ```
-4. Uygulamayı başlatın:
-   ```
-   dotnet run
-   ```
-
-## 🌱 Seed Data
-
-- 2 kullanıcı otomatik olarak eklenir:
-
-  - Admin:
-    - **Kullanıcı Adı:** meguvercin
-    - **Email:** info@meguvercin.com
-    - **Şifre:** 123456
-  - Kullanıcı:
-    - **Kullanıcı Adı:** emin
-    - **Email:** info@emin.com
-    - **Şifre:** 123456
-
-- 8 etiket:
-
-  - web programlama, backend, frontend, game, fullstack, yapayzeka, turizm, ekonomi
-
-- 3 örnek post (başlangıç için otomatik olarak eklenir)
 =======
 ## 📁 Proje Klasör Yapısı
 
@@ -225,8 +129,6 @@ DogusBlog/
   - web programlama, backend, frontend, game, fullstack, yapayzeka, turizm, ekonomi
 
 - 3 örnek post (başlangıç için otomatik olarak eklenir)
-
->>>>>>> 6b3b96e7bb4748fb96450de3f8f8509b9de5cae5
 
 ## 👤 Geliştirici
 
