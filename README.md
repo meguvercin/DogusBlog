@@ -25,7 +25,6 @@
 | Tüm postları görme | ✅ | ✅ |
 | Tüm postları düzenleme | ✅ | ❌ |
 | Kendi postlarını düzenleme | ✅ | ✅ |
-| Tüm yorumları silme | ✅ | ❌ |
 | Kendi yorumunu silme | ✅ | ✅ |
 | Tüm kullanıcıları görme | ❌ | ❌ |
 | Profilini güncelleme | ✅ | ✅ |
@@ -122,8 +121,8 @@ DogusBlog/
     - **Email:** info@emin.com
     - **Şifre:** 123456
 
-- 5 etiket:
-  - web programlama, backend, frontend, game, fullstack
+- 8 etiket:
+  - web programlama, backend, frontend, game, fullstack, yapayzeka, turizm, ekonomi
 
 - 3 örnek post (başlangıç için otomatik olarak eklenir)
 
