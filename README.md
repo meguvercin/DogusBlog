@@ -44,7 +44,7 @@
 - Repository Pattern
 
 ---
-=======
+
 ## 📁 Proje Klasör Yapısı
 
 ```
