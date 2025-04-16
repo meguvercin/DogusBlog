@@ -45,45 +45,55 @@
 
 ---
 ## 📁 Proje Klasör Yapısı
+
+```
 DogusBlog/
-│
 ├── Controllers/
 │   ├── PostsController.cs
 │   └── UsersController.cs
 │
 ├── Data/
 │   ├── Abstract/
+│   │   ├── ICommentRepository.cs
+│   │   ├── IPostRepository.cs
+│   │   ├── ITagRepository.cs
+│   │   └── IUserRepository.cs
 │   └── Concrete/
 │       └── EfCore/
-│   └── SeedData.cs
+│           ├── BlogContext.cs
+│           ├── EfCommentRepository.cs
+│           ├── EfPostRepository.cs
+│           ├── EfTagRepository.cs
+│           ├── EfUserRepository.cs
+│           └── SeedData.cs
 │
 ├── Entity/
-│   ├── User.cs
-│   ├── Post.cs
 │   ├── Comment.cs
-│   └── Tag.cs
+│   ├── Post.cs
+│   ├── Tag.cs
+│   └── User.cs
 │
 ├── Models/
-│   ├── RegisterViewModel.cs
 │   ├── LoginViewModel.cs
+│   ├── RegisterViewModel.cs
 │   ├── PostCreateViewModel.cs
 │   └── PostViewModel.cs
 │
-├── Views/
-│   ├── Posts/
-│   ├── Users/
-│   └── Shared/
-│
 ├── ViewComponents/
-│   └── TagsMenuViewComponent.cs
+│   ├── TagsMenuViewComponent.cs
 │   └── NewPostsViewComponent.cs
 │
+├── Views/
+│   ├── Posts/
+│   ├── Shared/
+│   └── Users/
+│
 ├── wwwroot/
-│   ├── img/
+│   └── img/
 │       ├── profile-picture.png
 │       ├── yazı1.jpg
 │       └── yazı2.jpg
-
+```
 
 
 ## 👤 Geliştirici
