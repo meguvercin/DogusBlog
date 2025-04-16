@@ -29,7 +29,6 @@
 | Kendi yorumunu silme       | ✅    | ✅        |
 | Tüm kullanıcıları görme    | ❌    | ❌        |
 | Profilini güncelleme       | ✅    | ✅        |
-=======
 
 ---
 
